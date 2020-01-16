@@ -2053,6 +2053,15 @@ const definedMessages = defineMessages({
         defaultMessage: 'Check for devices',
         id: 'TR_CHECK_FOR_DEVICES',
     },
+    TR_ALLOW_ANALYTICS: {
+        defaultMessage: 'Allow anonymous data storing',
+        id: 'TR_ALLOW_ANALYTICS',
+    },
+    TR_ALLOW_ANALYTICS_DESCRIPTION: {
+        defaultMessage:
+            'Trezor Suite does NOT track any balance-related or personal data, all anonymously',
+        id: 'TR_ALLOW_ANALYTICS_DESCRIPTION',
+    },
 });
 
 export default definedMessages;
