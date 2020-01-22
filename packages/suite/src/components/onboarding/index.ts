@@ -1,6 +1,5 @@
 import Key from './Key';
 import Option from './Option';
-import PinMatrix from './PinMatrix';
 import Preloader from './Preloader';
 import ProgressSteps from './ProgressSteps';
 import Text from './Text';
@@ -57,7 +56,6 @@ export {
     OnboardingIcon,
     Key,
     Loaders,
-    PinMatrix,
     Preloader,
     ProgressSteps,
     Text,
