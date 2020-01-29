@@ -111,7 +111,6 @@ const networks = [
         symbol: 'tdcr',
         bip44: "m/44'/42'/1'/i'",
         hasSignVerify: true, 
-        
         decimals: 8,
         testnet: true,
         explorer: {

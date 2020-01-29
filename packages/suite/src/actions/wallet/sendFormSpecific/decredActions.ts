@@ -2,7 +2,7 @@ import * as notificationActions from '@suite-actions/notificationActions';
 import { Dispatch, GetState } from '@suite-types';
 import * as accountActions from '@wallet-actions/accountActions';
 import { SEND } from '@wallet-actions/constants';
-import { BTC_RBF_SEQUENCE } from '@wallet-constants/sendForm';
+import { DCR_STANDARD_TX_FEE } from '@wallet-constants/sendForm';
 import { Account } from '@wallet-types';
 import { networkAmountToSatoshi } from '@wallet-utils/accountUtils';
 import { getLocalCurrency } from '@wallet-utils/settingsUtils';
@@ -139,14 +139,14 @@ export const send = () => async (dispatch: Dispatch, getState: GetState) => {
     const account = selectedAccount.account as Account;
     if (!send || !send.networkTypedDecred.transactionInfo || !selectedDevice) return;
 
-    const { transactionInfo } = send.networkTypeBitcoin;
+    const { transactionInfo } = send.networkTypedDecred;
 
     if (!transactionInfo || transactionInfo.type !== 'final') return;
     const { transaction } = transactionInfo;
 
     const inputs = transaction.inputs.map(vin => ({
         ...vin,
-        sequence: BTC_RBF_SEQUENCE,
+        fee: DCR_STANDARD_TX_FEE,
     }));
 
     const resp = await TrezorConnect.signTransaction({
